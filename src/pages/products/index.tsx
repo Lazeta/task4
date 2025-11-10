@@ -6,7 +6,7 @@ import { ProductCard } from "@entities/product/ui/ProductCard"
 export default function ProductsPage() {
   const { data } = useSuspenseQuery<Product[]>({
     queryKey: ["products"],
-    queryFn: () => fetchProducts(5),
+    queryFn: () => fetchProducts(),
   })
 
   return (

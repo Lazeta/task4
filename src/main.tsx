@@ -5,10 +5,11 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { RouterProvider } from "@tanstack/react-router"
 import { router } from "./router"
 import "./styles/index.css"
+import { DEFAULT_RETRY_COUNT, DEFAULT_STALE_TIME_MS } from "@shared/config/constants"
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: { retry: 1, staleTime: 60_000 },
+    queries: { retry: DEFAULT_RETRY_COUNT, staleTime: DEFAULT_STALE_TIME_MS },
   },
 })
 
