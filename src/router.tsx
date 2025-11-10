@@ -7,10 +7,10 @@ import {
 } from "@tanstack/react-router";
 import type { QueryClient } from "@tanstack/react-query";
 
-import HomePage from "./routes/home";
-import ProductsPage from "./routes/products";
-import ChatPage from "./routes/chat";
-import GraphQLPage from "./routes/graphql";
+import HomePage from "./pages/home";
+import ProductsPage from "./pages/products";
+import ChatPage from "./pages/chat";
+import GraphQLPage from "./pages/graphql";
 
 type RouterContext = { queryClient: QueryClient };
 

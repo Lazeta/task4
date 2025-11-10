@@ -29,7 +29,18 @@
     "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,
     "exactOptionalPropertyTypes": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+
+    /* Aliases */
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@features/*": ["./src/features/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"]
+    },
   },
   "include": ["src"]
 }
