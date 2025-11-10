@@ -7,6 +7,13 @@ type ChatMessage = {
   author: "me" | "server";
 };
 
+function formatTime(timestamp: number){
+    return new Date(timestamp).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+    })
+}
+
 export default function ChatPage() {
   const wsRef = useRef<WebSocket | null>(null);
   const [connected, setConnected] = useState(false);
@@ -72,6 +79,9 @@ export default function ChatPage() {
               }
             >
               {m.text}
+            </span>
+            <span className="ml-2 text-xs text-gray-500">
+                {formatTime(m.at)}
             </span>
           </div>
         ))}
