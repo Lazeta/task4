@@ -7,10 +7,10 @@ import {
 } from "@tanstack/react-router";
 import type { QueryClient } from "@tanstack/react-query";
 
-import HomePage from "./routes/home";
-import ProductsPage from "./routes/products";
-import ChatPage from "./routes/chat";
-import GraphQLPage from "./routes/graphql";
+import HomePage from "./pages/home";
+import ProductsPage from "./pages/products";
+import ChatPage from "./pages/chat";
+import GraphQLPage from "./pages/graphql";
 
 type RouterContext = { queryClient: QueryClient };
 
@@ -22,8 +22,8 @@ declare module "@tanstack/react-router" {
 
 const RootRoute = createRootRouteWithContext<RouterContext>()({
   component: () => (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      <nav className="flex gap-4 p-3 border-b bg-white">
+    <div className="min-h-screen bg-gray-800 text-gray-800">
+      <nav className="flex justify-center gap-5 sm:gap-15 p-4 bg-gray-700 text-white">
         <Link className="hover:underline" to={"/"}>
           Home
         </Link>
