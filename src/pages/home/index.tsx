@@ -1,3 +1,9 @@
+import { MainPage } from "./ui/MainPage";
+
 export default function HomePage() {
-  return <div>Welcome to the app home</div>;
+  return (
+    <div className="max-w-[1000px] mx-auto">
+      <MainPage />
+    </div>
+  )
 }

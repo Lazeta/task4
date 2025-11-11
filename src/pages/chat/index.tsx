@@ -8,9 +8,9 @@ export default function ChatPage() {
   const [input, setInput] = useState("");
 
   return (
-    <div className="max-w-xl mx-auto space-y-4">
-      <div className="text-sm">
-        {connected ? "Connected" : "Disconnected"}
+    <div className="space-y-4 max-w-[750px] mx-auto">
+      <div className="text-sm text-white">
+        {connected ? "Connected..." : "Disconnected..."}
       </div>
       <ChatMessages messages={messages} />
       <ChatInput input={input} setInput={setInput} sendMessage={sendMessage} />

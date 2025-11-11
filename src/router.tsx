@@ -22,8 +22,8 @@ declare module "@tanstack/react-router" {
 
 const RootRoute = createRootRouteWithContext<RouterContext>()({
   component: () => (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      <nav className="flex gap-4 p-3 border-b bg-white">
+    <div className="min-h-screen bg-gray-800 text-gray-800">
+      <nav className="flex justify-center gap-5 sm:gap-15 p-4 bg-gray-700 text-white">
         <Link className="hover:underline" to={"/"}>
           Home
         </Link>

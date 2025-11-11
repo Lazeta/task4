@@ -10,7 +10,7 @@ export default function ProductsPage() {
   })
 
   return (
-    <ul className="space-y-2">
+    <ul className="space-y-2 max-w-[1000px] mx-auto">
       {data.map((p: Product) => (
         <ProductCard key={p.id} product={p} />
       ))}

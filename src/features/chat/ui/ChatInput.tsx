@@ -20,7 +20,7 @@ export function ChatInput({ input, setInput, sendMessage }: Props) {
       }}
     >
       <input
-        className="flex-1 rounded border px-2 py-1"
+        className="flex-1 rounded border px-2 py-1 bg-gray-100"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Type a message..."

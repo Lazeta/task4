@@ -7,7 +7,7 @@ type Props = {
 
 export function ChatMessages({ messages }: Props) {
   return (
-    <div className="h-140 overflow-auto rounded border bg-white p-3 space-y-2">
+    <div className="h-140 overflow-auto rounded border bg-gray-100 p-3 space-y-2">
       {messages.map((m) => (
         <div
           key={m.id}
@@ -17,7 +17,7 @@ export function ChatMessages({ messages }: Props) {
             key={m.id}
             className={
               "inline-block rounded px-2 py-1 " +
-              (m.author === "me" ? "bg-blue-100" : "bg-gray-100")
+              (m.author === "me" ? "bg-blue-200" : "bg-gray-200")
             }
           >
             {m.text}
