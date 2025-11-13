@@ -6,6 +6,7 @@ import { RouterProvider } from "@tanstack/react-router"
 import { router } from "./router"
 import "./styles/index.css"
 import { DEFAULT_RETRY_COUNT, DEFAULT_STALE_TIME_MS } from "@shared/config/constants"
+import { Spinner } from "@shared/ui/spinner/Spinner"
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,7 +19,7 @@ router.update({ context: { queryClient } })
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Suspense fallback={<div className="p-4">Loading…</div>}>
+      <Suspense fallback={<Spinner/>}>
         <RouterProvider router={router} />
       </Suspense>
       <ReactQueryDevtools initialIsOpen={false} />
