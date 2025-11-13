@@ -7,10 +7,12 @@ import {
 } from "@tanstack/react-router";
 import type { QueryClient } from "@tanstack/react-query";
 
-import HomePage from "./pages/home";
-import ProductsPage from "./pages/products";
-import ChatPage from "./pages/chat";
-import GraphQLPage from "./pages/graphql";
+import HomePage from "../../pages/home";
+import ProductsPage from "../../pages/products";
+import ChatPage from "../../pages/chat";
+import GraphQLPage from "../../pages/graphql";
+import { Suspense } from "react";
+import { Spinner } from "@shared/ui/spinner/Spinner";
 
 type RouterContext = { queryClient: QueryClient };
 
@@ -53,19 +55,31 @@ const HomeRoute = createRoute({
 const ProductsRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/products",
-  component: ProductsPage,
+  component: () => (
+    <Suspense fallback={<Spinner/>}>
+      <ProductsPage />
+    </Suspense>
+  ),
 });
 
 const ChatRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/chat",
-  component: ChatPage,
+  component: () => (
+    <Suspense fallback={<Spinner/>}>
+      <ChatPage />
+    </Suspense>
+  ),
 });
 
 const GraphQLRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/graphql",
-  component: GraphQLPage,
+  component: () => (
+    <Suspense fallback={<Spinner/>}>
+      <GraphQLPage />
+    </Suspense>
+  ),
 });
 
 const routeTree = RootRoute.addChildren([

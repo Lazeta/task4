@@ -22,6 +22,5 @@ export async function fetchProducts({
     if (category) params.set("category", category)
 
     const { data } = await axios.get(`${PRODUCTS_URL}?${params.toString()}`)
-    return data.products.map((p: unknown) => ProductSchema.parse(p)
-    )
+    return data.products.map((p: unknown) => ProductSchema.parse(p))
 }
