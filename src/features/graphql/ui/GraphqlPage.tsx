@@ -1,3 +1,3 @@
 export function GraphqlPage() {
-    return <div className="border rounded p-2 bg-gray-100">GraphQL Page</div>;
+    return <div className="border rounded p-2 bg-primary text-primary-foreground">GraphQL Page</div>;
 }

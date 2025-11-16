@@ -13,6 +13,7 @@ import ChatPage from "../../pages/chat";
 import GraphQLPage from "../../pages/graphql";
 import { Suspense } from "react";
 import { Spinner } from "@shared/ui/spinner/Spinner";
+import { ThemeProvider } from "@entities/product/ui/ThemeContext";
 
 type RouterContext = { queryClient: QueryClient };
 
@@ -24,25 +25,27 @@ declare module "@tanstack/react-router" {
 
 const RootRoute = createRootRouteWithContext<RouterContext>()({
   component: () => (
-    <div className="min-h-screen bg-gray-800 text-gray-800">
-      <nav className="flex justify-center gap-5 sm:gap-15 p-4 bg-gray-700 text-white">
-        <Link className="hover:underline" to={"/"}>
-          Home
-        </Link>
-        <Link to="/products" className="hover:underline">
-          Products
-        </Link>
-        <Link to="/chat" className="hover:underline">
-          Chat
-        </Link>
-        <Link to="/graphql" className="hover:underline">
-          GraphQL
-        </Link>
-      </nav>
-      <main className="p-4">
-        <Outlet />
-      </main>
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-background text-foreground">
+        <nav className="flex justify-center gap-5 sm:gap-15 p-4">
+          <Link className="hover:underline" to={"/"}>
+            Home
+          </Link>
+          <Link to="/products" className="hover:underline">
+            Products
+          </Link>
+          <Link to="/chat" className="hover:underline">
+            Chat
+          </Link>
+          <Link to="/graphql" className="hover:underline">
+            GraphQL
+          </Link>
+        </nav>
+        <main className="p-4">
+          <Outlet />
+        </main>
+      </div>
+    </ThemeProvider>
   ),
 });
 
@@ -56,7 +59,7 @@ const ProductsRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/products",
   component: () => (
-    <Suspense fallback={<Spinner/>}>
+    <Suspense fallback={<Spinner />}>
       <ProductsPage />
     </Suspense>
   ),
@@ -66,7 +69,7 @@ const ChatRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/chat",
   component: () => (
-    <Suspense fallback={<Spinner/>}>
+    <Suspense fallback={<Spinner />}>
       <ChatPage />
     </Suspense>
   ),
@@ -76,7 +79,7 @@ const GraphQLRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/graphql",
   component: () => (
-    <Suspense fallback={<Spinner/>}>
+    <Suspense fallback={<Spinner />}>
       <GraphQLPage />
     </Suspense>
   ),

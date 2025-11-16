@@ -1,3 +1,4 @@
+import { Button } from "@shared/ui/shadcn/button";
 import type { FormEvent } from "react";
 
 type Props = {
@@ -20,17 +21,15 @@ export function ChatInput({ input, setInput, sendMessage }: Props) {
       }}
     >
       <input
-        className="flex-1 rounded border px-2 py-1 bg-gray-100"
+        area-label="chat input"
+        className="flex-1 rounded border px-2 py-1 bg-primary text-primary-foreground"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Type a message..."
       />
-      <button
-        type="submit"
-        className="rounded bg-blue-600 text-white px-3 py-1"
-      >
+      <Button variant="default" size="lg" aria-label="Submit">
         Send
-      </button>
+      </Button>
     </form>
   );
 }

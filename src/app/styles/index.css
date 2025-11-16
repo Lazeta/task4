@@ -1,1 +1,138 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-teal-900: #1f3a3d;
+    --color-blue-200: #bfdbfe;
+    --color-blue-800: #1b5583;
+    --color-blue-900: #0047ab;
+    --color-cyan-600: #5f9ea0;
+    --color-rose-50: #fff0f5;
+    --color-gray-100: #f3f4f6;
+    --color-gray-300: #d1d5db;
+    --color-gray-200: #e5e7eb;
+    --color-red-600: #b91c1c;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --transparent: transparent;
+    --border-radius: 0.5rem;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+:root[data-theme="light"] {
+  --background: var(--color-white);
+  --foreground: var(--color-black);
+  --primary: var(--color-gray-100);
+  --primary-foreground: var(--color-black);
+  --secondary: var(--color-cyan-600);
+  --secondary-foreground: var(--color-gray-100);
+  --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-rose-50);
+  --muted-foreground: var(--color-gray-300);
+  --accent: var(--color-blue-200);
+  --accent-foreground: var(--color-black);
+  --border: var(--color-black);
+  --input: var(--color-gray-100);
+  --radius: var(--border-radius);
+  --chat-outgoing-bg: var(--color-blue-200);
+  --chat-outgoing-foreground: var(--color-black);
+  --chat-incoming-bg: var(--color-gray-200);
+  --chat-incoming-foreground: var(--color-black);
+  /* --muted: var(); */
+  /* --ring: var(); */
+}
+
+:root[data-theme="dark"] {
+  --background: var(--color-teal-900);
+  --foreground: var(--color-rose-50);
+  --primary: var(--color-rose-50);
+  --primary-foreground: var(--color-black);
+  --secondary: var(--color-blue-900);
+  --secondary-foreground: var(--color-gray-100);
+  --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-rose-50);
+  --muted-foreground: var(--color-gray-300);
+  --accent: color-mix(
+    in oklab,
+    var(--color-blue-800) 80%,
+    var(--color-blue-900)
+  );
+  --accent-foreground: var(--color-rose-50);
+  --border: var(--color-rose-50);
+  --input: var(--color-rose-50);
+  --radius: var(--border-radius);
+  --chat-outgoing-bg: var(--color-blue-200);
+  --chat-outgoing-foreground: var(--color-black);
+  --chat-incoming-bg: var(--color-gray-200);
+  --chat-incoming-foreground: var(--color-black);
+  /* --muted: var(); */
+  /* --ring: var(); */
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: var(--background);
+  }
+  .text-foreground {
+    color: var(--foreground);
+  }
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .text-primary-foreground {
+    color: var(--primary-foreground);
+  }
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  .text-secondary-foreground {
+    color: var(--secondary-foreground);
+  }
+  .border-border {
+    border-color: var(--border);
+  }
+  .bg-destructive {
+    background-color: var(--destructive);
+  }
+  .text-destructive-foreground {
+    color: var(--destructive-foreground);
+  }
+  .bg-accent {
+    background-color: var(--accent);
+  }
+  .text-accent-foreground {
+    color: var(--accent-foreground);
+  }
+  .bg-input {
+    background-color: var(--input);
+  }
+  .border-radius {
+    border-radius: var(--radius);
+  }
+  .shadow-shadow {
+    box-shadow: var(--shadow);
+  }
+  .opacity-transparent {
+    opacity: var(--transparent);
+  }
+  .bg-chat-outgoing {
+    background-color: var(--chat-outgoing-bg);
+  }
+  .text-chat-outgoing-foreground {
+    color: var(--chat-outgoing-foreground);
+  }
+  .bg-chat-incoming {
+    background-color: var(--chat-incoming-bg);
+  }
+  .text-chat-incoming-foreground {
+    color: var(--chat-incoming-foreground);
+  }
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+}

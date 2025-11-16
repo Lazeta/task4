@@ -9,9 +9,9 @@ export default function ChatPage() {
 
   return (
     <div className="space-y-4 max-w-[750px] mx-auto">
-      <div className="text-sm text-white">
+      <span className="text-sm">
         {connected ? "Connected..." : "Disconnected..."}
-      </div>
+      </span>
       <ChatMessages messages={messages} />
       <ChatInput input={input} setInput={setInput} sendMessage={sendMessage} />
     </div>
