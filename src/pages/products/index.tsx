@@ -10,7 +10,7 @@ export const ProductsPage = () => {
   });
 
   return (
-    <ul className="max-w-[1000px] mx-auto space-y-2">
+    <ul className="max-w-5xl mx-auto space-y-2">
       {data.map((product: Product) => (
         <ProductCard key={product.id} product={product} />
       ))}

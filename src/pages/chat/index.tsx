@@ -8,7 +8,7 @@ export const ChatPage = () => {
   const [input, setInput] = useState("");
 
   return (
-    <div className="space-y-4 max-w-[750px] mx-auto">
+    <div className="space-y-4 max-w-2xl mx-auto">
       <span className="text-sm">
         {connected ? "Connected..." : "Disconnected..."}
       </span>

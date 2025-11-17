@@ -9,7 +9,7 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="max-w-[1000px] mx-auto">
+    <div className="max-w-5xl mx-auto">
       <MainPage theme={theme} onToggleTheme={handleToggleTheme} />
     </div>
   );
