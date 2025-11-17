@@ -3,7 +3,7 @@ import { ProductSchema, type Product } from "@/entities/product/model/types"
 import { PRODUCTS_URL } from "@/shared/config/api"
 import { DEFAULT_LIMIT } from "@/shared/config/constants"
 
-export async function fetchProducts({
+export const fetchProducts = async ({
     limit = DEFAULT_LIMIT,
     search,
     category,
@@ -13,7 +13,7 @@ export async function fetchProducts({
     search?: string
     category?: string
     skip?: number
-} = {}): Promise<Product[]> {
+} = {}): Promise<Product[]> => {
     const params = new URLSearchParams()
 
     if (limit) params.set("limit", String(limit))
@@ -22,5 +22,5 @@ export async function fetchProducts({
     if (category) params.set("category", category)
 
     const { data } = await axios.get(`${PRODUCTS_URL}?${params.toString()}`)
-    return data.products.map((p: unknown) => ProductSchema.parse(p))
+    return data.products.map((product: unknown) => ProductSchema.parse(product))
 }
