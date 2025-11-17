@@ -12,8 +12,8 @@ import { ProductsPage } from "../../pages/products";
 import { ChatPage } from "../../pages/chat";
 import { GraphQLPage } from "../../pages/graphql";
 import { Suspense } from "react";
-import { Spinner } from "@shared/ui/spinner/Spinner";
-import { ThemeProvider } from "@entities/product/ui/ThemeContext";
+import { Spinner } from "@/shared/ui/spinner/Spinner";
+import { ThemeProvider } from "@/entities/product/ui/ThemeContext";
 
 type RouterContext = { queryClient: QueryClient };
 

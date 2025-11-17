@@ -1,4 +1,4 @@
-import { GraphqlPage } from "@features/graphql/ui/GraphqlPage";
+import { GraphqlPage } from "@/features/graphql/ui/GraphqlPage";
 
 export const GraphQLPage = () => {
   return (

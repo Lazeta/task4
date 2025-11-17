@@ -1,4 +1,4 @@
-import { useTheme } from "@entities/product/ui/ThemeContext";
+import { useTheme } from "@/entities/product/ui/ThemeContext";
 import { MainPage } from "./ui/MainPage";
 
 export const HomePage = () => {

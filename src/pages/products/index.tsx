@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import type { Product } from "@entities/product/model/types";
-import { fetchProducts } from "@entities/product/api/fetch";
-import { ProductCard } from "@entities/product/ui/ProductCard";
+import type { Product } from "@/entities/product/model/types";
+import { fetchProducts } from "@/entities/product/api/fetch";
+import { ProductCard } from "@/entities/product/ui/ProductCard";
 
 export const ProductsPage = () => {
   const { data } = useSuspenseQuery<Product[]>({

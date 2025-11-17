@@ -1,5 +1,5 @@
-import { formatTime } from "@shared/lib/formatTime";
-import type { ChatMessage } from "@features/chat/model/types";
+import { formatTime } from "@/shared/lib/formatTime";
+import type { ChatMessage } from "@/features/chat/model/types";
 
 type Props = {
   messages: ChatMessage[];

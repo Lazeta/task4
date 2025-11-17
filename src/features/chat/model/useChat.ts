@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import type { ChatMessage } from "./types";
-import { ECHO_URL } from "@shared/config/api";
+import { ECHO_URL } from "@/shared/config/api";
 
 export const useChat = () => {
   const wsRef = useRef<WebSocket | null>(null);

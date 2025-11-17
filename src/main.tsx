@@ -8,7 +8,7 @@ import "./app/styles/index.css";
 import {
   DEFAULT_RETRY_COUNT,
   DEFAULT_STALE_TIME_MS,
-} from "@shared/config/constants";
+} from "@/shared/config/constants";
 
 const queryClient = new QueryClient({
   defaultOptions: {
