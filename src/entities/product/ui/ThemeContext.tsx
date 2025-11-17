@@ -10,7 +10,7 @@ import type { Theme } from "../model/types";
 
 const ThemeContext = createContext<{
   theme: Theme;
-  setTheme: (t: Theme) => void;
+  setTheme: (theme: Theme) => void;
 }>({ theme: "light", setTheme: () => {} });
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {

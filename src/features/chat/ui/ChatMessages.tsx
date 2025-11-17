@@ -8,25 +8,25 @@ type Props = {
 export const ChatMessages = ({ messages }: Props) => {
   return (
     <div className="h-120 overflow-auto border rounded p-3 space-y-2 bg-primary text-primary-foreground">
-      {messages.map((m) => (
+      {messages.map((message) => (
         <div
-          key={m.id}
-          className={`flex ${m.author === "me" ? "justify-end" : "justify-start"}`}
+          key={message.id}
+          className={`flex ${message.author === "me" ? "justify-end" : "justify-start"}`}
         >
           <div className="flex flex-col max-w-full">
             <span
-              key={m.id}
+              key={message.id}
               className={
                 "block px-3 py-2 rounded-lg text-sm wrap-break-words w-fit max-w-[90%] sm:max-w-[90%] " +
-                (m.author === "me"
+                (message.author === "me"
                   ? "bg-chat-outgoing text-chat-outgoing-foreground"
                   : "bg-chat-incoming text-chat-incoming-foreground")
               }
             >
-              {m.text}
+              {message.text}
             </span>
             <span className="text-xs text-muted-foreground ml-1">
-              {formatTime(m.at)}
+              {formatTime(message.at)}
             </span>
           </div>
         </div>
