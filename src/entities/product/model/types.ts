@@ -10,10 +10,3 @@ export const ProductSchema = z.object({
 export type Product = z.infer<typeof ProductSchema>
 
 export type Theme = "light" | "dark"
-
-export type UseProductsParams = {
-    limit?: number;
-    search?: string;
-    category?: string;
-    skip?: number;
-};

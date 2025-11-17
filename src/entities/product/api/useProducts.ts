@@ -1,9 +1,16 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
-import type { Product, UseProductsParams } from "../model/types";
 import axios from "axios"
+import type { Product } from "../model/types";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { ProductSchema } from "@/entities/product/model/types"
 import { PRODUCTS_URL } from "@/shared/config/api"
 import { DEFAULT_LIMIT } from "@/shared/config/constants"
+
+export type UseProductsParams = {
+    limit?: number;
+    search?: string;
+    category?: string;
+    skip?: number;
+};
 
 export const useProducts = (params?: UseProductsParams) => {
     const fetchProducts = async ({
