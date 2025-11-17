@@ -1,5 +1,6 @@
 import { formatTime } from "@/shared/lib/formatTime";
 import type { ChatMessage } from "@/features/chat/model/types";
+import clsx from "clsx";
 
 type Props = {
   messages: ChatMessage[];
@@ -16,12 +17,12 @@ export const ChatMessages = ({ messages }: Props) => {
           <div className="flex flex-col max-w-full">
             <span
               key={message.id}
-              className={
-                "block px-3 py-2 rounded-lg text-sm wrap-break-words w-fit max-w-[90%] sm:max-w-[90%] " +
-                (message.author === "me"
+              className={clsx(
+                "block px-3 py-2 rounded-lg text-sm wrap-break-words w-fit max-w-9/10 sm:max-w-9/10",
+                message.author === "me"
                   ? "bg-chat-outgoing text-chat-outgoing-foreground"
-                  : "bg-chat-incoming text-chat-incoming-foreground")
-              }
+                  : "bg-chat-incoming text-chat-incoming-foreground"
+              )}
             >
               {message.text}
             </span>

@@ -3,26 +3,31 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/shared/lib/utils/cn";
+import clsx from "clsx";
 
-const buttonBase =
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium " +
-  "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 " +
-  "disabled:pointer-events-none disabled:opacity-50";
+const buttonBase = clsx(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium",
+  "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ",
+  "disabled:pointer-events-none disabled:opacity-50"
+);
 
 const buttonVariants = cva(buttonBase, {
   variants: {
     variant: {
-      default:
-        "bg-secondary text-secondary-foreground " +
-        "hover:bg-[color-mix(in_srgb,var(--secondary)_90%,transparent)]",
+      default: clsx(
+        "bg-secondary text-secondary-foreground",
+        "hover:bg-[color-mix(in_srgb,var(--secondary)_90%,transparent)]"
+      ),
 
-      destructive:
-        "bg-destructive text-destructive-foreground " +
-        "hover:bg-[color-mix(in_srgb,var(--destructive)_90%,transparent)]",
+      destructive: clsx(
+        "bg-destructive text-destructive-foreground",
+        "hover:bg-[color-mix(in_srgb,var(--destructive)_90%,transparent)]"
+      ),
 
-      outline:
-        "border border-border bg-background text-foreground " +
-        "hover:bg-[color-mix(in_srgb,var(--background)_85%,transparent)]",
+      outline: clsx(
+        "border border-border bg-background text-foreground",
+        "hover:bg-[color-mix(in_srgb,var(--background)_85%,transparent)]"
+      ),
 
       ghost:
         "text-foreground hover:bg-[color-mix(in_srgb,var(--accent)_25%,transparent)]",
