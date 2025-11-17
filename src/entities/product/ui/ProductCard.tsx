@@ -7,11 +7,11 @@ export const ProductCard = ({ product }: { product: Product }) => {
       <p className="text-sm">{product.description}</p>
 
       <div className="flex gap-2 overflow-x-auto">
-        {product.images.map((img, index) => (
+        {product.images.map((img) => (
           <img
-            key={index}
+            key={img}
             src={img}
-            alt={`${product.title} image ${index + 1}`}
+            alt={`${product.title} product image`}
             className="w-32 h-32 object-cover rounded"
           />
         ))}
