@@ -5,7 +5,7 @@ type Props = {
   messages: ChatMessage[];
 };
 
-export function ChatMessages({ messages }: Props) {
+export const ChatMessages = ({ messages }: Props) => {
   return (
     <div className="h-120 overflow-auto border rounded p-3 space-y-2 bg-primary text-primary-foreground">
       {messages.map((m) => (
@@ -33,4 +33,4 @@ export function ChatMessages({ messages }: Props) {
       ))}
     </div>
   );
-}
+};

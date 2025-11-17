@@ -7,7 +7,7 @@ type Props = {
   sendMessage: (text: string) => void;
 };
 
-export function ChatInput({ input, setInput, sendMessage }: Props) {
+export const ChatInput = ({ input, setInput, sendMessage }: Props) => {
   return (
     <form
       className="flex gap-2"
@@ -32,4 +32,4 @@ export function ChatInput({ input, setInput, sendMessage }: Props) {
       </Button>
     </form>
   );
-}
+};

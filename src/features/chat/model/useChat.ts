@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import type { ChatMessage } from "./types";
+import { ECHO_URL } from "@shared/config/api";
 
-export default function useChat() {
+export const useChat = () => {
   const wsRef = useRef<WebSocket | null>(null);
   const [connected, setConnected] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -9,7 +10,7 @@ export default function useChat() {
   // Connecting to a WebSocket when mounting
   // we are signing up event listeners
   useEffect(() => {
-    const ws = new WebSocket("wss://ws.ifelse.io"); // testing server
+    const ws = new WebSocket(ECHO_URL);
     wsRef.current = ws;
 
     ws.addEventListener("open", () => setConnected(true));
@@ -20,7 +21,7 @@ export default function useChat() {
       setMessages((prev) => [
         ...prev,
         {
-          id: crypto.randomUUID(), 
+          id: crypto.randomUUID(),
           text, // this is the message from the server
           at: Date.now(),
           author: "server",

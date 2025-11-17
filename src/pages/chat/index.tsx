@@ -1,9 +1,9 @@
 import { useState } from "react";
-import useChat from "@features/chat/model/useChat";
+import { useChat } from "@features/chat/model/useChat";
 import { ChatMessages } from "@features/chat/ui/ChatMessages";
 import { ChatInput } from "@features/chat/ui/ChatInput";
 
-export default function ChatPage() {
+export const ChatPage = () => {
   const { connected, messages, sendMessage } = useChat();
   const [input, setInput] = useState("");
 
@@ -16,4 +16,4 @@ export default function ChatPage() {
       <ChatInput input={input} setInput={setInput} sendMessage={sendMessage} />
     </div>
   );
-}
+};
