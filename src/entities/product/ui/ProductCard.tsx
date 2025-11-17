@@ -1,6 +1,10 @@
-import type { Product } from "@entities/product/model/types";
+import type { Product } from "@/entities/product/model/types";
 
-export const ProductCard = ({ product }: { product: Product }) => {
+type ProductCardProps = {
+  product: Product;
+}
+
+export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <li className="border p-2 rounded bg-primary text-primary-foreground">
       <h3 className="font-semibold">{product.title}</h3>

@@ -1,17 +1,12 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
-import type { Product } from "@/entities/product/model/types";
-import { fetchProducts } from "@/entities/product/api/fetch";
 import { ProductCard } from "@/entities/product/ui/ProductCard";
+import { useProducts } from "@/entities/product/api/useProducts";
 
 export const ProductsPage = () => {
-  const { data } = useSuspenseQuery<Product[]>({
-    queryKey: ["products"],
-    queryFn: () => fetchProducts(),
-  });
+  const { data: products } = useProducts({ limit: 10 });
 
   return (
     <ul className="max-w-5xl mx-auto space-y-2">
-      {data.map(product => (
+      {products.map(product => (
         <ProductCard key={product.id} product={product} />
       ))}
     </ul>
