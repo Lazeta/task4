@@ -1,4 +1,5 @@
-import { Button } from "@/shared/ui/shadcn/button";
+import { Button } from "@/shared/ui/shadcn/ui/button";
+
 
 type MainPageProps = {
   theme: string;
