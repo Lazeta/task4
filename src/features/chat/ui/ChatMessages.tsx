@@ -18,7 +18,7 @@ export const ChatMessages = ({ messages }: Props) => {
             <span
               key={message.id}
               className={clsx(
-                "block px-3 py-2 rounded-lg text-sm wrap-break-words w-fit max-w-9/10 sm:max-w-9/10",
+                "block px-3 py-2 rounded-lg text-sm wrap-break-words w-fit max-w-full sm:max-w-full",
                 message.author === "me"
                   ? "bg-chat-outgoing text-chat-outgoing-foreground"
                   : "bg-chat-incoming text-chat-incoming-foreground"

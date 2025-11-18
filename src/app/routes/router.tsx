@@ -27,17 +27,17 @@ const RootRoute = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <ThemeProvider>
       <div className="min-h-screen bg-background text-foreground">
-        <nav className="flex justify-center gap-5 sm:gap-15 p-4">
-          <Link className="hover:underline" to={"/"}>
+        <nav className="flex justify-center items-center gap-5 sm:gap-15 py-3 font-medium">
+          <Link to="/" className="px-2 py-1 hover:underline rounded h-8 leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}} activeOptions={{ exact: true }}>
             Home
           </Link>
-          <Link to="/products" className="hover:underline">
+          <Link to="/products" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}}>
             Products
           </Link>
-          <Link to="/chat" className="hover:underline">
+          <Link to="/chat" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}}>
             Chat
           </Link>
-          <Link to="/graphql" className="hover:underline">
+          <Link to="/graphql" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}}>
             GraphQL
           </Link>
         </nav>
