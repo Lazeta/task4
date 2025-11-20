@@ -29,7 +29,12 @@
     "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,
     "exactOptionalPropertyTypes": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+
+    /* Aliases */
+    "paths": {
+      "@/*": ["./src/*"],
+    },
   },
-  "include": ["src"]
+  "include": ["src", "src/shared/ui/shadcn/ui" ],
 }
