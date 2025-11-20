@@ -72,7 +72,11 @@ const ChatRoute = createRoute({
 const GraphQLRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/graphql",
-  component: () => <PeopleListPage />,
+  component: () => (
+    <Suspense fallback={<Spinner />}>
+      <PeopleListPage />
+    </Suspense>
+  ),
 });
 
 const routeTree = RootRoute.addChildren([
