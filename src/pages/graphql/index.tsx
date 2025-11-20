@@ -1,9 +1,10 @@
-import { GraphqlPage } from "@/features/graphql/ui/GraphqlPage";
+import { PeopleList } from "@/entities/people/ui/PeopleList";
 
-export const GraphQLPage = () => {
+
+export const PeopleListPage = () => {
   return (
     <div className="max-w-5xl mx-auto">
-      <GraphqlPage />
+      <PeopleList />
     </div>
   );
 };

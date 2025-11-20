@@ -10,7 +10,7 @@ import type { QueryClient } from "@tanstack/react-query";
 import { HomePage } from "@/pages/home";
 import { ProductsPage } from "@/pages/products";
 import { ChatPage } from "@/pages/chat";
-import { GraphQLPage } from "@/pages/graphql";
+import { PeopleListPage } from "@/pages/graphql";
 import { Suspense } from "react";
 import { ThemeProvider } from "@/entities/product/ui/ThemeContext";
 import { Spinner } from "@/shared/ui/shadcn/ui/spinner";
@@ -28,22 +28,20 @@ const RootRoute = createRootRouteWithContext<RouterContext>()({
     <ThemeProvider>
       <div className="min-h-screen bg-background text-foreground">
         <nav className="flex justify-center items-center gap-5 sm:gap-15 py-3 font-medium">
-          <Link to="/" className="px-2 py-1 hover:underline rounded h-8 leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}} activeOptions={{ exact: true }}>
+          <Link to="/" className="px-2 py-1 hover:underline rounded h-8 leading-normal" activeProps={{ className: "bg-accent text-accent-foreground" }} activeOptions={{ exact: true }}>
             Home
           </Link>
-          <Link to="/products" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}}>
+          <Link to="/products" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground" }}>
             Products
           </Link>
-          <Link to="/chat" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}}>
+          <Link to="/chat" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground" }}>
             Chat
           </Link>
-          <Link to="/graphql" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground"}}>
+          <Link to="/graphql" className="px-2 py-1 hover:underline rounded leading-normal" activeProps={{ className: "bg-accent text-accent-foreground" }}>
             GraphQL
           </Link>
         </nav>
-        <main className="p-4">
-          <Outlet />
-        </main>
+        <main className="p-4"><Outlet /></main>
       </div>
     </ThemeProvider>
   ),
@@ -68,21 +66,13 @@ const ProductsRoute = createRoute({
 const ChatRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/chat",
-  component: () => (
-    <Suspense fallback={<Spinner />}>
-      <ChatPage />
-    </Suspense>
-  ),
+  component: () => <ChatPage />,
 });
 
 const GraphQLRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/graphql",
-  component: () => (
-    <Suspense fallback={<Spinner />}>
-      <GraphQLPage />
-    </Suspense>
-  ),
+  component: () => <PeopleListPage />,
 });
 
 const routeTree = RootRoute.addChildren([

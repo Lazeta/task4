@@ -9,6 +9,7 @@
     --color-blue-800: #1b5583;
     --color-blue-900: #0047ab;
     --color-cyan-600: #5f9ea0;
+    --color-cyan-700: #577b82;
     --color-rose-50: #fff0f5;
     --color-gray-100: #f3f4f6;
     --color-gray-300: #d1d5db;
@@ -43,7 +44,7 @@
   --chat-outgoing-foreground: var(--color-black);
   --chat-incoming-bg: var(--color-gray-200);
   --chat-incoming-foreground: var(--color-black);
-  /* --muted: var(); */
+  --muted: var(--color-cyan-700);
   /* --ring: var(); */
 }
 
@@ -70,7 +71,7 @@
   --chat-outgoing-foreground: var(--color-black);
   --chat-incoming-bg: var(--color-gray-200);
   --chat-incoming-foreground: var(--color-black);
-  /* --muted: var(); */
+  --muted: var(--color-cyan-700);
   /* --ring: var(); */
 }
 
@@ -134,5 +135,8 @@
   }
   .text-muted-foreground {
     color: var(--muted-foreground);
+  }
+  .bg-muted {
+    background-color: var(--muted);
   }
 }
