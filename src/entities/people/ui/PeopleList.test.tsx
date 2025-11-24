@@ -15,26 +15,26 @@ describe("PeopleList", () => {
       ],
     });
 
-    const { getAllByText } = render(<PeopleList />); 
+    const { getAllByText } = render(<PeopleList />);
 
-    expect(getAllByText("Luke Skywalker"))
-    expect(getAllByText("Leia Organa"))
-    expect(getAllByText("Obi-Wan Kenobi"))
+    expect(getAllByText("Luke Skywalker"));
+    expect(getAllByText("Leia Organa"));
+    expect(getAllByText("Obi-Wan Kenobi"));
 
-    const { container } = render(<PeopleList />); 
+    const { container } = render(<PeopleList />);
     const items = container.querySelectorAll("li");
     expect(items.length).toBe(3);
   });
 
-    it("throws error if people list is empty", () => {
-    (usePeople as unknown as Mock).mockReturnValue({data: [], })
+  it("throws error if people list is empty", () => {
+    (usePeople as unknown as Mock).mockReturnValue({ data: [] });
 
     expect(() => render(<PeopleList />)).toThrow();
-  })
+  });
 
   it("throws if hook returns undefined", () => {
-  (usePeople as unknown as Mock).mockReturnValue({ data: undefined });
+    (usePeople as unknown as Mock).mockReturnValue({ data: undefined });
 
-  expect(() => render(<PeopleList />)).toThrow();
-});
+    expect(() => render(<PeopleList />)).toThrow();
+  });
 });

@@ -21,4 +21,5 @@ const routeTree = RootRoute.addChildren([
 export const router = createRouter({
   routeTree,
   context: undefined as unknown as RouterContext,
+  basepath: '/task4',
 });
