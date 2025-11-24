@@ -1,17 +1,13 @@
-/* eslint-disable react-refresh/only-export-components */
-import {
-  createContext,
-  useState,
-  useContext,
-  useEffect,
-  type ReactNode,
-} from "react";
-import type { Theme } from "../model/types";
+import { createContext, useState, useEffect, type ReactNode } from "react";
+import type { Theme } from "./types";
 
 const ThemeContext = createContext<{
   theme: Theme;
   setTheme: (theme: Theme) => void;
-}>({ theme: "light", setTheme: () => {} });
+}>({
+  theme: "light",
+  setTheme: () => {},
+});
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>("light");
@@ -27,4 +23,4 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useTheme = () => useContext(ThemeContext);
+export { ThemeContext };

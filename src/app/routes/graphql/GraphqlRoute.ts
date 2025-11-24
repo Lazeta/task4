@@ -5,5 +5,5 @@ import { PeopleListPage } from "@/pages/graphql";
 export const GraphqlRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/graphql",
-  component: () => PeopleListPage,
+  component: PeopleListPage,
 });

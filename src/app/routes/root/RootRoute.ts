@@ -5,5 +5,5 @@ import { RootLayout } from "./RootLayout";
 export type RouterContext = { queryClient: QueryClient };
 
 export const RootRoute = createRootRouteWithContext<RouterContext>()({
-  component: () => RootLayout
+  component: RootLayout
 });

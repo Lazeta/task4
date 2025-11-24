@@ -9,8 +9,8 @@ export const ProductsPage = () => {
   return (
     <ul className="max-w-5xl mx-auto space-y-2">
       {products.map((product) => (
-        <Suspense fallback={<Spinner />}>
-          <ProductCard key={product.id} product={product} />
+        <Suspense key={product.id} fallback={<Spinner />}>
+          <ProductCard product={product} />
         </Suspense>
       ))}
     </ul>

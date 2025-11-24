@@ -5,5 +5,5 @@ import { ProductsPage } from "@/pages/products";
 export const ProductsRoute = createRoute({
     getParentRoute: () => RootRoute,
     path: "/products",
-    component: () => ProductsPage,
+    component: ProductsPage,
 });

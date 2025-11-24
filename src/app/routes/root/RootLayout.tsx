@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/entities/product/ui/ThemeContext";
+import { ThemeProvider } from "@/shared/context/ThemeProvider";
 import { Header } from "./Header";
 import { Outlet } from "@tanstack/react-router";
 

@@ -8,5 +8,3 @@ export const ProductSchema = z.object({
     images: z.array(z.string()),
 })
 export type Product = z.infer<typeof ProductSchema>
-
-export type Theme = "light" | "dark"
