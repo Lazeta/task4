@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+# Task4 — React + TypeScript + Vite + shadcn/ui + Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The application is deployed and available here:  
+https://lazeta.github.io/task4/
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What has been implemented
 
-## React Compiler
+- Navigation and routing using manual version `@tanstack/react-router` with active link highlighting.
+- Home page at first loading
+- Theme management with a `ThemeProvider` and `useTheme` custom hook.
+- Products page with product cards and data loading from API.
+- `Spinner` component for loading states from shadcn.
+- Chat page with message display and metadata such like dialog.
+- GraphQL page for query testing, and shows cards from graphql query api.
+- Unit testing for core components and hooks.
+- Module testing component.
+- Snapshot testing for client api.
+- E2E testing send form echo chat.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## How it was implemented
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Stack**: React 19.1.1, TypeScript 5.9.3, Vite 7.1.7, TailwindCSS 4.1.17, zod 4.1.12, clsx 2.1.1,  
+- **Data fetching**: TanStack Query with Zod schemas for validation.
+- **Routing**: TanStack Router with routes organized by folders and `index.tsx` entry points.
+- **UI**: shadcn/ui components and lucide-react icons, wrapped in reusable components.
+- **Theme**: Context-based provider that sets `data-theme` on the document root.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Architectural approaches
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Feature-Sliced Design (FSD) structure:
+  - `app/` — entry point and global providers
+  - `entities/` — business entities (product, chat, etc.)
+  - `features/` — functional blocks
+  - `pages/` — application pages
+  - `shared/` — utilities, contexts, UI components
+- Strict TypeScript configuration (`noImplicitAny`, preference for `unknown`/`never`, for maximum strict `exactOptionalPropertyTypes`, `noUncheckedIndexedAccess`).
+- Validation of API responses with `Zod` schemas.
+- Separation of logic and presentation for maintainability.
+- `"@/*": ["./src/*"]` - convenient shortcuts for modular architecture.
+- 
+
+---
+
+## Testing
+
+- Unit tests implemented with Vitest.
+- Coverage includes:
+  - Rendering of components (`ProductCard`, `PeopleList`)
+  - Hooks (`useProducts`, `useTheme`)
+  - Data validation with Zod
+
+---
+
+## Deployment
+
+- Built with Vite and deployed to GitHub Pages.
+- `vite.config.ts` configured with `base` for correct asset routing.
+- Accessible at: https://lazeta.github.io/task4/
+
+---
+
+## Dependencies
+
+- `react`, `react-dom`
+- `@tanstack/react-query`, `@tanstack/react-router`, `@tanstack/react-query-devtools`,
+- `tailwindcss`
+- `shadcn/ui`, `lucide-react`
+- `zod`
+- `class-variance-authority`
+- `clsx`
+
+---
+
+## Getting started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/lazeta/task4.git
+cd task4
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Install dependencies:
+```bash
+npm install
 ```
+Run the development server:
+```bash
+npm run dev
+```
+Build for production:
+```bash
+npm run build
+```
+Preview the production build locally:
+```bash
+npm run dev
+```
+---
+
+## Summary
+
+This project demonstrates a modern React + TypeScript setup with strict typing, feature-sliced architecture, reusable UI components, and deployment to GitHub Pages. It includes unit testing and a clear separation of concerns to ensure maintainability and scalability.
