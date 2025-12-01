@@ -74,7 +74,7 @@
   --muted: var(--color-cyan-700);
   /* --ring: var(); */
 }
-
+/* Все это должно быть в tailwind config */
 @layer utilities {
   .bg-background {
     background-color: var(--background);

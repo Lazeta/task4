@@ -1,4 +1,5 @@
 import { GRAPHQL_FULL_URL } from "@/shared/config/api";
+import axios from "axios";
 
 export const graphqlFetcher = async <
     TData,
@@ -7,14 +8,14 @@ export const graphqlFetcher = async <
     query: string,
     variables?: TVars
 ): Promise<TData> => {
-    const response = await fetch(GRAPHQL_FULL_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, variables }),
-    });
+    const response = await axios.post<{ data: TData; errors?: { message: string }[] }>(
+        GRAPHQL_FULL_URL, { query, variables },
+        {
+            headers: { "Content-Type": "application/json" },
+        }
+    );
 
-    const json: { data: TData; errors?: { message: string }[] } =
-        await response.json();
+    const json = response.data;
 
     const firstError = json.errors?.[0];
     if (firstError) {

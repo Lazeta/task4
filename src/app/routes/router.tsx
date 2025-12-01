@@ -4,6 +4,7 @@ import { ProductsRoute } from "./product/ProductsRoute";
 import { RootRoute, type RouterContext } from "./root/RootRoute";
 import { ChatRoute } from "./chat/ChatRoute";
 import { GraphqlRoute } from "./graphql/GraphqlRoute";
+import { QueryClient } from "@tanstack/react-query";
 
 declare module "@tanstack/react-router" {
   interface Register {
@@ -18,8 +19,10 @@ const routeTree = RootRoute.addChildren([
   GraphqlRoute,
 ]);
 
+const queryClient = new QueryClient();
+
 export const router = createRouter({
   routeTree,
-  context: undefined as unknown as RouterContext,
+  context: { queryClient } satisfies RouterContext,
   basepath: '/task4',
 });

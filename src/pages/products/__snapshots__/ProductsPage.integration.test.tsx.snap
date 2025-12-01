@@ -1,0 +1,78 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductsPage (integration) >  1`] = `
+<div>
+  <ul
+    class="max-w-5xl mx-auto space-y-2"
+  >
+    <li
+      class="border p-2 rounded bg-primary text-primary-foreground"
+    >
+      <h3
+        class="font-semibold"
+      >
+        Product A
+      </h3>
+      <p
+        class="text-sm"
+      >
+        desc
+      </p>
+      <div
+        class="flex gap-2 overflow-x-auto"
+      >
+        <img
+          alt="Product A product image"
+          class="w-32 h-32 object-cover rounded"
+          src="img1.png"
+        />
+      </div>
+      <p
+        class="text-sm"
+      >
+        Prices product: 
+        <span
+          class="font-bold"
+        >
+           
+          50
+        </span>
+      </p>
+    </li>
+    <li
+      class="border p-2 rounded bg-primary text-primary-foreground"
+    >
+      <h3
+        class="font-semibold"
+      >
+        Product B
+      </h3>
+      <p
+        class="text-sm"
+      >
+        desc
+      </p>
+      <div
+        class="flex gap-2 overflow-x-auto"
+      >
+        <img
+          alt="Product B product image"
+          class="w-32 h-32 object-cover rounded"
+          src="img2.png"
+        />
+      </div>
+      <p
+        class="text-sm"
+      >
+        Prices product: 
+        <span
+          class="font-bold"
+        >
+           
+          50
+        </span>
+      </p>
+    </li>
+  </ul>
+</div>
+`;

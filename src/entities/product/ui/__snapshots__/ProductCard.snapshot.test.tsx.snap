@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductCard (snapshot) > matches snapshot 1`] = `
+<div>
+  <li
+    class="border p-2 rounded bg-primary text-primary-foreground"
+  >
+    <h3
+      class="font-semibold"
+    >
+      Default Product
+    </h3>
+    <p
+      class="text-sm"
+    >
+      default description
+    </p>
+    <p
+      class="text-sm"
+    >
+      Prices product: 
+      <span
+        class="font-bold"
+      >
+         
+        50
+      </span>
+    </p>
+  </li>
+</div>
+`;

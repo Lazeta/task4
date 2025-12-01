@@ -2,7 +2,7 @@
 import { Button } from "@/shared/ui/shadcn/ui/button";
 import type { FormEvent } from "react";
 
-type Props = {
+interface Props {
   input: string;
   setInput: (value: string) => void;
   sendMessage: (text: string) => void;

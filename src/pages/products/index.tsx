@@ -4,15 +4,19 @@ import { Suspense } from "react";
 import { Spinner } from "@/shared/ui/shadcn/ui/spinner";
 
 export const ProductsPage = () => {
-  const { data: products } = useProducts({ limit: 10 });
+  const { data: products = [] } = useProducts({ limit: 10 });
+
+  if (!products || products.length === 0) {
+    return <div>Data is empty...</div>;
+  }
 
   return (
-    <ul className="max-w-5xl mx-auto space-y-2">
-      {products.map((product) => (
-        <Suspense key={product.id} fallback={<Spinner />}>
-          <ProductCard product={product} />
-        </Suspense>
-      ))}
-    </ul>
+    <Suspense fallback={<Spinner />}>
+      <ul className="max-w-5xl mx-auto space-y-2">
+        {products?.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </ul>
+    </Suspense>
   );
 };

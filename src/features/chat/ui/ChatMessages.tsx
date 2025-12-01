@@ -12,7 +12,7 @@ export const ChatMessages = ({ messages }: Props) => {
       {messages.map((message) => (
         <div
           key={message.id}
-          className={`flex ${message.author === "me" ? "justify-end" : "justify-start"}`}
+          className={clsx(`flex ${message.author === "me" ? "justify-end" : "justify-start"}`)}
         >
           <div className="flex flex-col max-w-full">
             <span

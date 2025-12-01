@@ -1,0 +1,67 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PeopleList (unit) > renders nothing if hook returns undefined 1`] = `
+<div>
+  <div
+    class="max-w-5xl mx-auto"
+  >
+    <ul
+      class="border border-radius border-border p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 bg-primary"
+    >
+      <li
+        class="border border-radius bg-muted shadow-sm hover:shadow-md transition-shadow p-4 "
+      >
+        <h3
+          class="font-semibold text-accent-foreground"
+        >
+          Luke Skywalker
+        </h3>
+        <p
+          class="text-sm text-muted-foreground break-all"
+        >
+          ID: 
+          1
+        </p>
+      </li>
+      <li
+        class="border border-radius bg-muted shadow-sm hover:shadow-md transition-shadow p-4 "
+      >
+        <h3
+          class="font-semibold text-accent-foreground"
+        >
+          Leia Organa
+        </h3>
+        <p
+          class="text-sm text-muted-foreground break-all"
+        >
+          ID: 
+          2
+        </p>
+      </li>
+      <li
+        class="border border-radius bg-muted shadow-sm hover:shadow-md transition-shadow p-4 "
+      >
+        <h3
+          class="font-semibold text-accent-foreground"
+        >
+          Obi-Wan Kenobi
+        </h3>
+        <p
+          class="text-sm text-muted-foreground break-all"
+        >
+          ID: 
+          10
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PeopleList (unit) > renders nothing if people list is empty 1`] = `
+<div>
+  <div>
+    Data is empty...
+  </div>
+</div>
+`;
